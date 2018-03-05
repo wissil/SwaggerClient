@@ -1,0 +1,89 @@
+---
+swagger: "2.0"
+info:
+  description: "Sample testing api"
+  version: "v1"
+  title: "Sample App API"
+  termsOfService: "http://www.youtube.com"
+  contact:
+    name: "Filip Kozjak"
+    email: "filip.kozjak@gmail.com"
+  license:
+    name: "Commercial"
+    url: "http://www.licence-url.com"
+host: "localhost:8080"
+basePath: "/api-doc"
+tags:
+- name: "helloworld"
+schemes:
+- "http"
+- "https"
+paths:
+  /hello/:
+    get:
+      tags:
+      - "helloworld"
+      summary: "Get hello response"
+      description: "Service greets with hello"
+      operationId: "hello"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+  /products:
+    get:
+      tags:
+      - "helloworld"
+      summary: "View a list of available products"
+      description: ""
+      operationId: "getAllProducts"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+  /show/{id}:
+    get:
+      tags:
+      - "helloworld"
+      summary: "Search a product with an ID"
+      description: ""
+      operationId: "showProduct"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Product"
+definitions:
+  Product:
+    type: "object"
+    required:
+    - "price"
+    properties:
+      version:
+        type: "integer"
+        format: "int32"
+      productId:
+        type: "string"
+      description:
+        type: "string"
+      imageUrl:
+        type: "string"
+      price:
+        type: "number"
+    description: "Sample Product"
