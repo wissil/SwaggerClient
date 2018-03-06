@@ -10,4 +10,4 @@
 
 ### Useful readings
 
-    - [https://blog.philipphauer.de/enriching-restful-services-swagger/](https://blog.philipphauer.de/enriching-restful-services-swagger/)
+[https://blog.philipphauer.de/enriching-restful-services-swagger/](https://blog.philipphauer.de/enriching-restful-services-swagger/)
